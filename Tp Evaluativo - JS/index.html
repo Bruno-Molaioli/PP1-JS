@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>TP Autos</title>
+</head>
+<body>
+    <h1>Gestión de Concesionaria 🚗</h1>
+
+    <button onclick="obtenerAutos()">Traer Todos los Autos</button>
+
+    <h3>Agregar Auto</h3>
+    <form id="form-crear">
+        <input type="number" id="id" placeholder="ID" required><br>
+        <input type="text" id="marca" placeholder="Marca" required><br>
+        <input type="text" id="modelo" placeholder="Modelo" required><br>
+        <input type="number" id="anio" placeholder="Año" required><br>
+        <input type="number" id="precio" placeholder="Precio" required><br>
+        <button type="submit">Guardar</button>
+    </form>
+
+    <h3>Buscar / Editar / Borrar</h3>
+    <input type="number" id="buscar-id" placeholder="Ingresar ID del auto">
+    <button onclick="buscarPorId()">Buscar por ID</button>
+    <button onclick="borrarDesdeBusqueda()">Borrar este Auto</button>
+
+    <form id="form-editar">
+        <input type="number" id="edit-id" readonly><br> <input type="text" id="edit-marca" placeholder="Nueva Marca"><br>
+        <input type="text" id="edit-modelo" placeholder="Nuevo Modelo"><br>
+        <input type="number" id="edit-anio" placeholder="Nuevo Año"><br>
+        <input type="number" id="edit-precio" placeholder="Nuevo Precio"><br>
+        <button type="submit">Aplicar Cambios (Editar)</button>
+    </form>
+
+    <h3>Datos Crudos del Servidor:</h3>
+    <pre id="pantalla" style="background: #222; color: #fff; padding: 15px; border-radius: 5px;"></pre>
+
+    <hr style="margin: 30px 0; border: 1px dashed #ccc;">
+
+<h3>❤️ Mis Autos Favoritos (Guardados en el Navegador):</h3>
+
+<button onclick="presionarBotonFavorito()" style="padding: 10px 15px; background-color: #ff6b6b; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">
+  ❤️ Agregar/Quitar de Favoritos (Usar ID de arriba)
+</button>
+
+<p style="font-size: 0.9em; color: #666; margin-top: 5px;">
+  *Hacé clic para agregar o quitar de tus favoritos el ID del auto que escribiste en el buscador.
+</p>
+
+<pre id="pantalla-favoritos" style="background: #1a1a1a; color: #ff8787; padding: 15px; border-radius: 5px; margin-top: 10px; font-family: monospace; min-height: 50px;"></pre>
+    <script src="main.js"></script>
+</body>
+</html>
